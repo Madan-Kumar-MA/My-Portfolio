@@ -1,9 +1,7 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import ParallaxBackground from '../components/ParallaxBackground';
-import ThemeSwitcher from '../components/ThemeSwitcher';
 import ProjectCard from '../components/ProjectCard';
 import { useTheme } from '../contexts/ThemeContext';
 import { Button } from "@/components/ui/button";
@@ -13,58 +11,46 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Index = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const { theme } = useTheme();
+  const { theme, setTheme } = useTheme();
+  const pageHeight = useRef(0);
 
   useEffect(() => {
+    // Get document height for percentage calculation
+    pageHeight.current = Math.max(
+      document.body.scrollHeight, 
+      document.body.offsetHeight,
+      document.documentElement.clientHeight,
+      document.documentElement.scrollHeight, 
+      document.documentElement.offsetHeight
+    );
+    
     const handleScroll = () => {
       const position = window.scrollY;
       setScrollPosition(position);
+      
+      // Calculate scroll percentage
+      const scrollPercentage = (position / (pageHeight.current - window.innerHeight)) * 100;
+      
+      // Change theme based on scroll percentage
+      if (scrollPercentage < 25) {
+        setTheme('morning');
+      } else if (scrollPercentage < 50) {
+        setTheme('day');
+      } else if (scrollPercentage < 75) {
+        setTheme('evening');
+      } else {
+        setTheme('night');
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
+    // Initial call to set correct theme
+    handleScroll();
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
-
-  // When URL changes, update the theme based on the section
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash;
-      
-      switch(hash) {
-        case '#about':
-          // Morning theme for About section
-          // useTheme().setTheme('morning');
-          break;
-        case '#skills':
-          // Day theme for Skills section
-          // useTheme().setTheme('day');
-          break;
-        case '#projects':
-          // Evening theme for Projects section
-          // useTheme().setTheme('evening');
-          break;
-        case '#education':
-        case '#contact':
-          // Night theme for Education and Contact sections
-          // useTheme().setTheme('night');
-          break;
-        default:
-          // Default theme for Home section
-          break;
-      }
-    };
-    
-    // Call the function to set initial theme based on hash
-    handleHashChange();
-    
-    // Add event listener for hash changes
-    window.addEventListener('hashchange', handleHashChange);
-    return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-    };
-  }, []);
+  }, [setTheme]);
 
   const skills = [
     { name: "JavaScript", level: 90 },
@@ -231,7 +217,6 @@ const Index = () => {
     <>
       <ParallaxBackground scrollPosition={scrollPosition} />
       <NavBar />
-      <ThemeSwitcher />
       
       <main className="pt-16">
         {/* Hero Section */}
@@ -406,7 +391,7 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Experience Section - New */}
+        {/* Experience Section */}
         <section id="experience" className={`${getThemeClasses('experience')}`}>
           <div 
             className="container mx-auto px-4"

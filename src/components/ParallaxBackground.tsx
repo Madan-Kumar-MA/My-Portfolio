@@ -45,7 +45,7 @@ const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({ scrollPosition 
     />
   ));
 
-  // Theme-based backgrounds
+  // Theme-based backgrounds with enhanced transitions
   const getBackgroundGradient = () => {
     switch(theme) {
       case 'morning':
@@ -59,6 +59,57 @@ const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({ scrollPosition 
         return 'bg-gradient-to-b from-indigo-900 via-purple-900 to-[#121212]';
     }
   };
+
+  // Calculate sun/moon positions based on theme
+  const calculateSunMoonPosition = () => {
+    switch(theme) {
+      case 'morning':
+        return { top: '35%', opacity: 1 };
+      case 'day':
+        return { top: '15%', opacity: 1 };
+      case 'evening':
+        return { top: '60%', opacity: 1 };
+      case 'night':
+        return { top: '200%', opacity: 0 };
+      default:
+        return { top: '15%', opacity: 1 };
+    }
+  };
+
+  const calculateMoonPosition = () => {
+    switch(theme) {
+      case 'morning':
+        return { top: '200%', opacity: 0 };
+      case 'day':
+        return { top: '200%', opacity: 0 };
+      case 'evening':
+        return { top: '35%', opacity: 0.7 };
+      case 'night':
+        return { top: '15%', opacity: 1 };
+      default:
+        return { top: '200%', opacity: 0 };
+    }
+  };
+
+  const sunPosition = calculateSunMoonPosition();
+  const moonPosition = calculateMoonPosition();
+
+  // Calculate cloud opacity based on theme
+  const getCloudOpacity = () => {
+    switch(theme) {
+      case 'morning':
+      case 'day':
+        return 0.8;
+      case 'evening':
+        return 0.4;
+      case 'night':
+        return 0;
+      default:
+        return 0.5;
+    }
+  };
+
+  const cloudOpacity = getCloudOpacity();
 
   return (
     <div className="fixed inset-0 w-full h-full overflow-hidden z-0 transition-colors duration-1000">
@@ -83,13 +134,13 @@ const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({ scrollPosition 
       {/* Shooting stars - only visible at night */}
       {theme === 'night' || theme === 'evening' ? shootingStars : null}
       
-      {/* Sun or Moon based on theme */}
+      {/* Sun with enhanced transitions */}
       <div 
-        className={`absolute w-20 h-20 rounded-full transition-all duration-1000 animate-float`}
+        className="absolute w-20 h-20 rounded-full transition-all duration-1000 animate-float"
         style={{
-          top: theme === 'morning' ? '35%' : theme === 'day' ? '15%' : theme === 'evening' ? '60%' : '200%',
+          top: sunPosition.top,
           right: '15%',
-          opacity: theme === 'night' ? 0 : 1,
+          opacity: sunPosition.opacity,
           background: theme === 'morning' 
             ? 'linear-gradient(to right bottom, #ffab91, #ff9800)'
             : theme === 'day' 
@@ -99,13 +150,13 @@ const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({ scrollPosition 
         }}
       />
       
-      {/* Moon - only visible at night and partially in evening */}
+      {/* Moon - with enhanced transitions */}
       <div 
         className="absolute w-20 h-20 rounded-full bg-gradient-to-br from-slate-100 to-slate-300 animate-float transition-all duration-1000" 
         style={{
-          top: theme === 'night' ? '15%' : theme === 'evening' ? '35%' : '200%',
+          top: moonPosition.top,
           right: '15%',
-          opacity: theme === 'night' ? 1 : theme === 'evening' ? 0.7 : 0,
+          opacity: moonPosition.opacity,
           boxShadow: '0 0 70px 10px rgba(255, 255, 255, 0.4)',
         }}
       />
@@ -116,7 +167,7 @@ const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({ scrollPosition 
         style={{
           top: '25%',
           filter: 'blur(8px)',
-          opacity: theme === 'day' || theme === 'morning' ? 0.8 : theme === 'evening' ? 0.4 : 0,
+          opacity: cloudOpacity,
         }}
       />
       
@@ -125,7 +176,7 @@ const ParallaxBackground: React.FC<ParallaxBackgroundProps> = ({ scrollPosition 
         style={{
           top: '30%',
           filter: 'blur(6px)',
-          opacity: theme === 'day' || theme === 'morning' ? 0.7 : theme === 'evening' ? 0.3 : 0,
+          opacity: cloudOpacity * 0.9,
         }}
       />
       

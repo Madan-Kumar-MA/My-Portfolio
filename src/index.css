@@ -53,7 +53,7 @@
     overflow-x: hidden;
     background: linear-gradient(to bottom, #0f0929 0%, #1a103d 100%);
     color: #fff;
-    transition: background 1s ease-in-out;
+    transition: background 2s ease-in-out;
   }
 }
 
@@ -130,7 +130,7 @@
 
 /* Theme transitions */
 .theme-transition {
-  transition: all 1s ease-in-out;
+  transition: all 1.5s ease-in-out;
 }
 
 /* Custom scroll bar */
@@ -150,3 +150,73 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #6D28D9;
 }
+
+/* Add new animations for theme transitions */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes shooting-star {
+  0% { 
+    transform: translateX(0) translateY(0) rotate(-45deg);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% { 
+    transform: translateX(-500px) translateY(500px) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes cloud-slow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+
+@keyframes cloud-fast {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+
+/* Animation classes */
+.animate-twinkle {
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-shooting-star {
+  animation: shooting-star 6s ease-out forwards;
+  animation-iteration-count: infinite;
+}
+
+.animate-cloud-slow {
+  animation: cloud-slow 120s linear infinite;
+}
+
+.animate-cloud-fast {
+  animation: cloud-fast 80s linear infinite;
+}
+
