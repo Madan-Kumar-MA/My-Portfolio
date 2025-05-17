@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -82,10 +81,6 @@ export default {
 					from: { height: 'var(--radix-accordion-content-height)' },
 					to: { height: '0' }
 				},
-        'cycling': {
-          '0%': { transform: 'translateX(-100%) rotateY(0deg)' },
-          '100%': { transform: 'translateX(100vw) rotateY(0deg)' },
-        },
         'pedal': {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' },
@@ -102,18 +97,38 @@ export default {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' },
         },
+        'twinkle': {
+          '0%, 100%': { opacity: 0.2, transform: 'scale(0.8)' },
+          '50%': { opacity: 1, transform: 'scale(1.2)' },
+        },
+        'shooting-star': {
+          '0%': { 
+            transform: 'translateX(0) translateY(0) rotate(-45deg)',
+            opacity: 1,
+            boxShadow: '0 0 0 white'
+          },
+          '10%': { 
+            opacity: 1,
+            boxShadow: '0 0 20px #fff, 0 0 40px #8B5CF6'
+          },
+          '20%, 100%': { 
+            transform: 'translateX(-100vw) translateY(100vh) rotate(-45deg)',
+            opacity: 0
+          }
+        },
       },
       animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-        'cycling': 'cycling 15s linear infinite',
         'pedal': 'pedal 1s linear infinite',
         'cloud-slow': 'cloud-move-1 25s linear infinite',
         'cloud-fast': 'cloud-move-2 15s linear infinite',
         'float': 'float 3s ease-in-out infinite',
+        'twinkle': 'twinkle 3s ease-in-out infinite',
+        'shooting-star': 'shooting-star 10s linear infinite',
 			},
       backgroundImage: {
-        'gradient-sky': 'linear-gradient(to bottom, #accbee 0%, #e7f0fd 100%)',
+        'gradient-sky': 'linear-gradient(to bottom, #1a103d 0%, #0f0929 100%)',
       },
 		}
 	},

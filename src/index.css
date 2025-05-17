@@ -51,6 +51,8 @@
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
     overflow-x: hidden;
+    background: linear-gradient(to bottom, #0f0929 0%, #1a103d 100%);
+    color: #fff;
   }
 }
 
@@ -92,7 +94,7 @@
 
 /* Gradient text */
 .text-gradient {
-  background: linear-gradient(90deg, #4776E6 0%, #8E54E9 100%);
+  background: linear-gradient(90deg, #8B5CF6 0%, #D8B4FE 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -103,14 +105,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #1a103d;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #8B5CF6;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #6D28D9;
 }
+
+/* Remove the cycling animation component */
