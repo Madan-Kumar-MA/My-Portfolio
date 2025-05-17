@@ -81,6 +81,20 @@ const Projects: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
     }
   };
 
+  const getButtonStyle = () => {
+    switch(theme) {
+      case 'morning':
+        return 'border-2 border-orange-500 text-orange-600 hover:bg-orange-500/20 shadow-lg shadow-orange-500/20';
+      case 'day':
+        return 'border-2 border-blue-500 text-blue-600 hover:bg-blue-500/20 shadow-lg shadow-blue-500/20';
+      case 'evening':
+        return 'border-2 border-purple-400 text-white hover:bg-purple-400/20 shadow-lg shadow-purple-400/20';
+      case 'night':
+      default:
+        return 'border-2 border-indigo-400 text-white hover:bg-indigo-400/20 shadow-lg shadow-indigo-600/20';
+    }
+  };
+
   return (
     <section id="projects" className={getThemeClasses()}>
       <div 
@@ -101,7 +115,12 @@ const Projects: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
         </div>
         
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg" asChild className={`${theme === 'night' ? 'text-white border-white hover:bg-white/20' : theme === 'evening' ? 'text-white border-white hover:bg-white/20' : 'text-indigo-900 border-indigo-900 hover:bg-indigo-900/20'}`}>
+          <Button 
+            variant="outline" 
+            size="lg" 
+            asChild 
+            className={`${getButtonStyle()} transition-all duration-300 transform hover:scale-105`}
+          >
             <a href="https://github.com" target="_blank" rel="noopener noreferrer">
               View All Projects on GitHub
             </a>

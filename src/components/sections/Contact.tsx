@@ -35,6 +35,20 @@ const Contact: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
         return 'text-white';
     }
   };
+  
+  const getButtonStyle = () => {
+    switch(theme) {
+      case 'morning':
+        return 'bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-orange-500 hover:to-yellow-600 text-white shadow-lg shadow-orange-500/30';
+      case 'day':
+        return 'bg-gradient-to-r from-blue-400 to-sky-500 hover:from-blue-500 hover:to-sky-600 text-white shadow-lg shadow-sky-500/30';
+      case 'evening':
+        return 'bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white shadow-lg shadow-purple-500/30';
+      case 'night':
+      default:
+        return 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white shadow-lg shadow-indigo-700/30';
+    }
+  };
 
   return (
     <section id="contact" className={getThemeClasses()}>
@@ -159,7 +173,7 @@ const Contact: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
               </div>
               <Button 
                 type="submit" 
-                className={`w-full ${theme === 'night' ? 'bg-indigo-600 hover:bg-indigo-700' : theme === 'evening' ? 'bg-purple-600 hover:bg-purple-700' : theme === 'day' ? 'bg-blue-600 hover:bg-blue-700' : 'bg-orange-600 hover:bg-orange-700'}`}
+                className={`w-full ${getButtonStyle()} transition-all duration-300 transform hover:scale-105`}
               >
                 Send Message
               </Button>
