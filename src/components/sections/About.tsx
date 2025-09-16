@@ -50,35 +50,35 @@ const About: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="aspect-square max-w-md mx-auto rounded-full overflow-hidden shadow-xl shadow-purple-500/20">
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=500"
-              alt="John Smith Portrait"
+              src="/madan-photo.jpg"
+              alt="Madan Kumar M A Portrait"
               className="w-full h-full object-cover"
             />
           </div>
           <div className={getTextColor()}>
             <h3 className="text-2xl font-semibold font-display mb-4">Who am I?</h3>
             <p className="mb-6">
-              I'm a Computer Science student at University of Technology with a passion for web development and software engineering. Currently in my final year, I'm focusing on building accessible and user-friendly web applications.
+              I'm a tech-savvy leader skilled in Kotlin development, creative video editing, clear audio enhancement, and impactful visual branding. Currently pursuing M.C.A. in Computer Applications at RNS Institute of Technology with an 8.7 CGPA.
             </p>
             <p className="mb-6">
-              My journey started with simple HTML/CSS websites, but I've since expanded my skills to include full stack development with modern JavaScript frameworks and backend technologies.
+              My journey encompasses frontend development, mobile app development with Android Studio, and comprehensive video/graphics editing. I specialize in creating engaging digital content and user-friendly applications.
             </p>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <h4 className="font-semibold mb-2">Location</h4>
-                <p>Cambridge, MA</p>
+                <p>Bengaluru, Karnataka</p>
               </div>
               <div>
-                <h4 className="font-semibold mb-2">Email</h4>
-                <p>john.smith@example.com</p>
-              </div>
-              <div>
-                <h4 className="font-semibold mb-2">Study</h4>
-                <p>University of Technology</p>
+                <h4 className="font-semibold mb-2">Institution</h4>
+                <p>RNS Institute Of Technology</p>
               </div>
               <div>
                 <h4 className="font-semibold mb-2">Degree</h4>
-                <p>B.Sc. Computer Science</p>
+                <p>M.C.A. Computer Applications</p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-2">CGPA</h4>
+                <p>8.7 / 10.0</p>
               </div>
             </div>
           </div>

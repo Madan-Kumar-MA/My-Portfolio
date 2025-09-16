@@ -27,59 +27,48 @@ const Education: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => 
   
   const education: EducationItem[] = [
     {
-      degree: "Bachelor of Science in Computer Science",
-      institution: "University of Technology",
-      year: "2020 - 2024",
-      description: "Focus on Web Development and Artificial Intelligence"
-    },
-    {
-      degree: "High School Diploma",
-      institution: "Green Valley High School",
-      year: "2016 - 2020",
-      description: "Advanced Placement in Mathematics and Computer Science"
-    },
+      degree: "Master of Computer Applications (M.C.A.)",
+      institution: "RNS Institute Of Technology",
+      year: "2024 - 2026",
+      description: "Computer Applications with CGPA 8.7/10.0 - Channasandra, Bengaluru"
+    }
   ];
 
   const certifications: Certification[] = [
     {
-      name: "Full Stack Web Development",
-      issuer: "Udemy",
+      name: "Kotlin Full Course",
+      issuer: "Comprehensive Programming Course",
+      year: "April 2025"
+    },
+    {
+      name: "Android Development",
+      issuer: "Mobile App Development",
+      year: "2024"
+    },
+    {
+      name: "Video/Graphics Editing",
+      issuer: "Digital Media Production",
       year: "2023"
     },
     {
-      name: "Machine Learning Fundamentals",
-      issuer: "Coursera",
-      year: "2022"
-    },
-    {
-      name: "AWS Certified Cloud Practitioner",
-      issuer: "Amazon Web Services",
+      name: "Frontend Development",
+      issuer: "Web Development",
       year: "2023"
-    },
-    {
-      name: "React Native Mobile Development",
-      issuer: "Pluralsight",
-      year: "2023"
-    },
-    {
-      name: "UI/UX Design Fundamentals",
-      issuer: "Interaction Design Foundation",
-      year: "2022"
-    },
+    }
   ];
   
   const achievements: Achievement[] = [
     {
-      title: "Hackathon Winner",
-      description: "First place in University Hackathon 2023 for developing an AI-assisted learning platform"
+      title: "Class Representative of MCA",
+      description: "Elected as Class Representative at RNS Institute Of Technology, serving as vital link between students and faculty"
     },
     {
-      title: "Dean's List",
-      description: "Maintained a GPA above 3.8 for 6 consecutive semesters"
+      title: "High Academic Performance",
+      description: "Maintained excellent CGPA of 8.7/10.0 in Master of Computer Applications program"
     },
     {
-      title: "Open Source Contributor",
-      description: "Active contributor to React-based open source projects with over 50 accepted pull requests"
+      title: "Technical Leadership",
+      description: "Leading communication & coordination, event planning, and providing student support across the department"
     }
   ];
 

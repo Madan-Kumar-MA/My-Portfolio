@@ -15,22 +15,22 @@ const Experience: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) =>
   
   const experiences: WorkExperience[] = [
     {
-      position: "Web Development Intern",
-      company: "Tech Innovations Inc.",
-      period: "May 2023 - Aug 2023",
-      description: "Developed responsive web applications using React and Node.js. Collaborated with the design team to implement UI/UX improvements."
+      position: "Class Representative of MCA",
+      company: "RNS Institute Of Technology",
+      period: "2024 - Present",
+      description: "Elected Class Representative serving as a vital link between students and faculty. Responsible for communication & coordination, event planning & leadership, and providing student support & feedback to ensure a supportive learning environment."
     },
     {
-      position: "Student Research Assistant",
-      company: "University AI Lab",
-      period: "Jan 2023 - Present",
-      description: "Researching applications of machine learning in web development. Implemented prototype systems for automated accessibility testing."
+      position: "Video/Graphics Editor",
+      company: "Freelance",
+      period: "2023 - Present",
+      description: "Specializing in podcast editing, improving viewer engagement by trimming silence and adding visuals. Maintaining brand identity with consistent intros, logos, and styles for multiple platforms including YouTube, Reels, and Shorts."
     },
     {
-      position: "Freelance Web Developer",
-      company: "Self-employed",
-      period: "2021 - Present",
-      description: "Designed and developed websites for small businesses and non-profit organizations."
+      position: "Frontend Developer",
+      company: "Self-employed Projects",
+      period: "2023 - Present",
+      description: "Developing responsive web applications and Android applications using modern technologies. Focus on creating user-friendly interfaces and optimal user experiences."
     }
   ];
 

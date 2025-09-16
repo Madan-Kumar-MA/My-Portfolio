@@ -13,14 +13,14 @@ const Skills: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
   const { theme } = useTheme();
   
   const skills: Skill[] = [
-    { name: "JavaScript", level: 90 },
-    { name: "React", level: 85 },
-    { name: "Node.js", level: 80 },
-    { name: "HTML/CSS", level: 95 },
-    { name: "Python", level: 75 },
-    { name: "SQL", level: 70 },
-    { name: "TypeScript", level: 82 },
-    { name: "Git", level: 88 },
+    { name: "Kotlin", level: 90 },
+    { name: "Java", level: 85 },
+    { name: "Android Studio", level: 80 },
+    { name: "Video Editing", level: 95 },
+    { name: "XML", level: 75 },
+    { name: "Computer Vision", level: 70 },
+    { name: "Audio Enhancement", level: 85 },
+    { name: "Frontend Development", level: 80 }
   ];
 
   const getThemeClasses = () => {
@@ -87,33 +87,33 @@ const Skills: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
             <div className="grid grid-cols-2 gap-4">
               <Card className={`${theme === 'night' ? 'bg-indigo-950/50 border-purple-500/30' : theme === 'evening' ? 'bg-purple-900/50 border-purple-400/30' : theme === 'day' ? 'bg-blue-600/20 border-blue-300/30' : 'bg-orange-600/20 border-orange-300/30'} ${getTextColor()}`}>
                 <CardContent className="pt-6">
-                  <h4 className="font-semibold mb-2">Problem Solving</h4>
+                  <h4 className="font-semibold mb-2">Mobile App Development</h4>
                   <p className="text-sm opacity-80">
-                    Analytical approach to debug issues and develop efficient solutions
+                    Android application development using Kotlin and Android Studio
                   </p>
                 </CardContent>
               </Card>
               <Card className={`${theme === 'night' ? 'bg-indigo-950/50 border-purple-500/30' : theme === 'evening' ? 'bg-purple-900/50 border-purple-400/30' : theme === 'day' ? 'bg-blue-600/20 border-blue-300/30' : 'bg-orange-600/20 border-orange-300/30'} ${getTextColor()}`}>
                 <CardContent className="pt-6">
-                  <h4 className="font-semibold mb-2">Communication</h4>
+                  <h4 className="font-semibold mb-2">Leadership</h4>
                   <p className="text-sm opacity-80">
-                    Clear and effective communication in technical and non-technical contexts
+                    Class Representative with strong communication and coordination skills
                   </p>
                 </CardContent>
               </Card>
               <Card className={`${theme === 'night' ? 'bg-indigo-950/50 border-purple-500/30' : theme === 'evening' ? 'bg-purple-900/50 border-purple-400/30' : theme === 'day' ? 'bg-blue-600/20 border-blue-300/30' : 'bg-orange-600/20 border-orange-300/30'} ${getTextColor()}`}>
                 <CardContent className="pt-6">
-                  <h4 className="font-semibold mb-2">Project Management</h4>
+                  <h4 className="font-semibold mb-2">Content Creation</h4>
                   <p className="text-sm opacity-80">
-                    Experience with Agile methodologies and team collaboration tools
+                    Video and podcast editing with brand consistency across platforms
                   </p>
                 </CardContent>
               </Card>
               <Card className={`${theme === 'night' ? 'bg-indigo-950/50 border-purple-500/30' : theme === 'evening' ? 'bg-purple-900/50 border-purple-400/30' : theme === 'day' ? 'bg-blue-600/20 border-blue-300/30' : 'bg-orange-600/20 border-orange-300/30'} ${getTextColor()}`}>
                 <CardContent className="pt-6">
-                  <h4 className="font-semibold mb-2">UI/UX Design</h4>
+                  <h4 className="font-semibold mb-2">Visual Branding</h4>
                   <p className="text-sm opacity-80">
-                    Creating intuitive user interfaces with focus on user experience
+                    Creating impactful visual branding and graphics design
                   </p>
                 </CardContent>
               </Card>
