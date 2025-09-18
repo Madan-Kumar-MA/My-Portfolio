@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
             Hi, I'm <span className="text-gradient">Madan Kumar M A</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white">
-            Video/Graphics Editor • Frontend Developer • Technical Operations
+            Web Developer • Android Developer • Machine Learning
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <Button size="lg" asChild className={`${buttonStyles.primary} transition-all duration-300 transform hover:scale-105`}>

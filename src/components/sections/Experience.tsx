@@ -15,22 +15,22 @@ const Experience: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) =>
   
   const experiences: WorkExperience[] = [
     {
-      position: "Class Representative of MCA",
+      position: "Web Developer",
+      company: "Self-employed Projects",
+      period: "2023 - Present",
+      description: "Developing responsive web applications and Android applications using modern technologies. Focus on creating user-friendly interfaces and optimal user experiences."
+    },
+    {
+      position: "Class Representative – MCA",
       company: "RNS Institute Of Technology",
       period: "2024 - Present",
-      description: "Elected Class Representative serving as a vital link between students and faculty. Responsible for communication & coordination, event planning & leadership, and providing student support & feedback to ensure a supportive learning environment."
+      description: "Acted as a bridge between faculty and students ensuring smooth communication. Coordinated academic and extracurricular activities on behalf of the class."
     },
     {
       position: "Video/Graphics Editor",
       company: "Freelance",
       period: "2023 - Present",
       description: "Specializing in podcast editing, improving viewer engagement by trimming silence and adding visuals. Maintaining brand identity with consistent intros, logos, and styles for multiple platforms including YouTube, Reels, and Shorts."
-    },
-    {
-      position: "Frontend Developer",
-      company: "Self-employed Projects",
-      period: "2023 - Present",
-      description: "Developing responsive web applications and Android applications using modern technologies. Focus on creating user-friendly interfaces and optimal user experiences."
     }
   ];
 

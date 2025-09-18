@@ -98,15 +98,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <CardContent>
         <CardDescription>{description}</CardDescription>
       </CardContent>
-      <CardFooter className="flex justify-between">
-        {demoUrl && (
-          <Button variant="outline" size="sm" asChild className={`${getButtonStyle(true)} transition-all duration-300 transform hover:scale-105`}>
-            <a href={demoUrl} target="_blank" rel="noopener noreferrer">Live Demo</a>
-          </Button>
-        )}
+      <CardFooter className="flex justify-end">
         {codeUrl && (
-          <Button variant="outline" size="sm" asChild className={`${getButtonStyle()} transition-all duration-300 transform hover:scale-105`}>
-            <a href={codeUrl} target="_blank" rel="noopener noreferrer">Source Code</a>
+          <Button variant="outline" size="sm" asChild className={`${getButtonStyle(true)} transition-all duration-300 transform hover:scale-105`}>
+            <a href={codeUrl} target="_blank" rel="noopener noreferrer">View on GitHub</a>
           </Button>
         )}
       </CardFooter>

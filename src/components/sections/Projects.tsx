@@ -20,26 +20,23 @@ const Projects: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
     {
       title: "Simple Calculator",
       description: "A user-friendly Android application that functions as a basic calculator, capable of performing fundamental arithmetic operations including addition, subtraction, multiplication, and division.",
-      imageUrl: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&q=80&w=500",
+      imageUrl: "https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&q=80&w=500",
       tags: ["Java", "XML", "Android Studio"],
-      demoUrl: "#",
-      codeUrl: "#",
+      codeUrl: "https://github.com/Madan-Kumar-MA/SimpleCalc",
     },
     {
-      title: "Podcast Editing",
-      description: "Comprehensive video editing service improving viewer engagement by trimming silence, adding visuals, maintaining brand identity with consistent intros, logos, and styles for multiple platforms.",
-      imageUrl: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=500",
-      tags: ["Video Editing", "Computer Vision", "Audio Enhancement"],
-      demoUrl: "#",
-      codeUrl: "#",
+      title: "Mental Fatigue Detector",
+      description: "Developed a Python-based application that detects mental fatigue using typing patterns, integrating machine learning with a Tkinter GUI to provide real-time feedback. Designed and trained a Random Forest model to analyze keystroke dynamics such as typing speed and key hold time.",
+      imageUrl: "https://images.unsplash.com/photo-1509223197845-458d87318791?auto=format&fit=crop&q=80&w=500",
+      tags: ["Machine Learning", "Python", "Tkinter"],
+      codeUrl: "https://github.com/Madan-Kumar-MA/Mental-Fatigue-Detector",
     },
     {
       title: "Personal Portfolio Website",
       description: "A modern, responsive personal portfolio website that effectively showcases professional skills, projects, and achievements with clean UI and optimal user experience.",
-      imageUrl: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=500",
+      imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=500",
       tags: ["React", "Tailwind CSS", "Responsive Design"],
-      demoUrl: "#",
-      codeUrl: "#",
+      codeUrl: "https://github.com/Madan-Kumar-MA",
     },
   ];
 
@@ -106,18 +103,7 @@ const Projects: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
           ))}
         </div>
         
-        <div className="text-center mt-12">
-          <Button 
-            variant="outline" 
-            size="lg" 
-            asChild 
-            className={`${getButtonStyle()} transition-all duration-300 transform hover:scale-105`}
-          >
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-              View All Projects on GitHub
-            </a>
-          </Button>
-        </div>
+        {/* "View All Projects" removed per request */}
       </div>
     </section>
   );

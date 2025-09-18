@@ -52,16 +52,13 @@ const About: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
             <img
               src="/madan-photo.jpg"
               alt="Madan Kumar M A Portrait"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover transition-transform duration-500 ease-out hover:scale-105 hover:brightness-110"
             />
           </div>
           <div className={getTextColor()}>
             <h3 className="text-2xl font-semibold font-display mb-4">Who am I?</h3>
             <p className="mb-6">
-              I'm a tech-savvy leader skilled in Kotlin development, creative video editing, clear audio enhancement, and impactful visual branding. Currently pursuing M.C.A. in Computer Applications at RNS Institute of Technology with an 8.7 CGPA.
-            </p>
-            <p className="mb-6">
-              My journey encompasses frontend development, mobile app development with Android Studio, and comprehensive video/graphics editing. I specialize in creating engaging digital content and user-friendly applications.
+              My career objective is to apply my expertise in object-oriented programming, software development, machine learning, and problem-solving to build creative and effective solutions. I’m driven to use my skills to contribute to an organization’s success and growth.
             </p>
             <div className="grid grid-cols-2 gap-4">
               <div>

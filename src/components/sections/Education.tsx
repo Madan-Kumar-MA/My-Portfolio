@@ -28,47 +28,49 @@ const Education: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => 
   const education: EducationItem[] = [
     {
       degree: "Master of Computer Applications (M.C.A.)",
-      institution: "RNS Institute Of Technology",
-      year: "2024 - 2026",
-      description: "Computer Applications with CGPA 8.7/10.0 - Channasandra, Bengaluru"
+      institution: "RNS Institute of Technology",
+      year: "Dec 2024 - Present",
+      description: "Machine Learning, DSA, DBMS, Java, Web Technologies"
+    },
+    {
+      degree: "Bachelor of Science (BSc)",
+      institution: "Mahatma Gandhi Memorial College, Bangalore",
+      year: "2020 - 2023",
+      description: "Udupi"
     }
   ];
 
   const certifications: Certification[] = [
     {
-      name: "Kotlin Full Course",
-      issuer: "Comprehensive Programming Course",
-      year: "April 2025"
-    },
-    {
-      name: "Android Development",
-      issuer: "Mobile App Development",
+      name: "Explore Machine Learning using Python",
+      issuer: "Online Certification",
       year: "2024"
     },
     {
-      name: "Video/Graphics Editing",
-      issuer: "Digital Media Production",
-      year: "2023"
+      name: "Front End Web Developer Certification",
+      issuer: "Online Certification",
+      year: "2024"
     },
     {
-      name: "Frontend Development",
-      issuer: "Web Development",
-      year: "2023"
+      name: "Certification of Excellence in Front-End Web Development [MCA x IEEE]",
+      issuer: "RNS Institute Of Technology • IEEE",
+      year: "2024"
+    },
+    {
+      name: "Mastering Kotlin for Android Development",
+      issuer: "Online Certification",
+      year: "2025"
     }
   ];
   
   const achievements: Achievement[] = [
     {
-      title: "Class Representative of MCA",
-      description: "Elected as Class Representative at RNS Institute Of Technology, serving as vital link between students and faculty"
+      title: "Class Representative – MCA Department",
+      description: "Acted as a bridge between faculty and students ensuring smooth communication. Coordinated academic and extracurricular activities on behalf of the class."
     },
     {
-      title: "High Academic Performance",
-      description: "Maintained excellent CGPA of 8.7/10.0 in Master of Computer Applications program"
-    },
-    {
-      title: "Technical Leadership",
-      description: "Leading communication & coordination, event planning, and providing student support across the department"
+      title: "Lead Organizer – Sportify, Akanksh Alumni Meet",
+      description: "Planned and executed the MCA department’s sports fest, cultural fest, and alumni meet. Managed logistics, team coordination, and student engagement, ensuring successful events."
     }
   ];
 

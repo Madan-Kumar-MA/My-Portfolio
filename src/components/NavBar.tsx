@@ -44,7 +44,7 @@ const NavBar: React.FC = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-4">
         <a href="#hero" className="text-xl font-bold font-display text-primary">
-          <span className="text-gradient">John Smith</span>
+          <span className="text-gradient">Madan Kumar M A</span>
         </a>
         
         <nav className="hidden md:block">
@@ -62,7 +62,9 @@ const NavBar: React.FC = () => {
           </ul>
         </nav>
         
-        <Button className={`hidden md:block ${getButtonStyle()} transition-all duration-300 hover:-translate-y-1`}>Download CV</Button>
+        <Button className={`hidden md:block ${getButtonStyle()} transition-all duration-300 hover:-translate-y-1`} asChild>
+          <a href="/Madan_Kumar_Resume.pdf" download="Madan_Kumar_Resume.pdf">Download CV</a>
+        </Button>
         
         {/* Mobile menu button */}
         <button className="md:hidden text-gray-700">

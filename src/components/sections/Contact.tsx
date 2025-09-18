@@ -65,6 +65,20 @@ const Contact: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
     }
   };
 
+  const getPrimaryButtonStyle = () => {
+    switch(theme) {
+      case 'morning':
+        return 'bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-orange-500 hover:to-yellow-600 text-white shadow-md shadow-orange-500/20';
+      case 'day':
+        return 'bg-gradient-to-r from-blue-500 to-sky-600 hover:from-blue-600 hover:to-sky-700 text-white shadow-md shadow-sky-500/20';
+      case 'evening':
+        return 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-md shadow-purple-500/20';
+      case 'night':
+      default:
+        return 'bg-gradient-to-r from-indigo-600 to-purple-700 hover:from-indigo-700 hover:to-purple-800 text-white shadow-md shadow-indigo-700/20';
+    }
+  };
+
   return (
     <section id="contact" className={getThemeClasses()}>
       <div 
@@ -97,7 +111,7 @@ const Contact: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
                   <Mail className={`h-6 w-6 ${getIconColor()}`} />
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="opacity-80">Available on request</p>
+                    <a href="mailto:madankumarma6336@gmail.com" className="opacity-80 hover:underline">madankumarma6336@gmail.com</a>
                   </div>
                 </div>
                 
@@ -121,23 +135,21 @@ const Contact: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
               <div className="flex flex-col space-y-4">
                 <div className="flex space-x-4">
                   <Button 
-                    variant="outline" 
                     size="lg" 
                     asChild 
-                    className={`${getButtonStyle()} transition-all duration-300 transform hover:scale-105`}
+                    className={`${getPrimaryButtonStyle()} transition-all duration-300 transform hover:scale-105`}
                   >
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/Madan-Kumar-MA" target="_blank" rel="noopener noreferrer">
                       <Github className="h-5 w-5 mr-2" />
                       GitHub
                     </a>
                   </Button>
                   <Button 
-                    variant="outline" 
                     size="lg" 
                     asChild 
-                    className={`${getButtonStyle()} transition-all duration-300 transform hover:scale-105`}
+                    className={`${getPrimaryButtonStyle()} transition-all duration-300 transform hover:scale-105`}
                   >
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/madan-kumar-m-a-link" target="_blank" rel="noopener noreferrer">
                       <Linkedin className="h-5 w-5 mr-2" />
                       LinkedIn
                     </a>
@@ -145,10 +157,9 @@ const Contact: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
                 </div>
                 
                 <Button 
-                  variant="outline" 
                   size="lg" 
                   asChild 
-                  className={`${getButtonStyle()} transition-all duration-300 transform hover:scale-105 w-full`}
+                  className={`${getPrimaryButtonStyle()} transition-all duration-300 transform hover:scale-105 w-full`}
                 >
                   <a href="/Madan_Kumar_Resume.pdf" download="Madan_Kumar_Resume.pdf">
                     <FileDown className="h-5 w-5 mr-2" />
@@ -159,7 +170,18 @@ const Contact: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
             </div>
             
             <div>
-              <form className="space-y-4">
+              <form className="space-y-4" onSubmit={(e) => {
+                e.preventDefault();
+                const form = e.currentTarget as HTMLFormElement;
+                const formData = new FormData(form);
+                const name = (formData.get('name') as string) || '';
+                const fromEmail = (formData.get('email') as string) || '';
+                const subject = (formData.get('subject') as string) || 'New message from portfolio';
+                const message = (formData.get('message') as string) || '';
+                const body = `Name: ${name}%0D%0AEmail: ${fromEmail}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+                const mailto = `mailto:madankumarma6336@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+                window.location.href = mailto;
+              }}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className={`block text-sm font-medium ${getTextColor()} mb-1`}>
@@ -168,6 +190,7 @@ const Contact: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
                     <input 
                       type="text" 
                       id="name" 
+                      name="name"
                       className={`w-full p-3 border ${theme === 'night' ? 'bg-indigo-950/30 border-purple-500/30' : theme === 'evening' ? 'bg-purple-900/30 border-purple-400/30' : theme === 'day' ? 'bg-blue-600/10 border-blue-300/30' : 'bg-orange-600/10 border-orange-300/30'} rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500/50 ${getTextColor()}`}
                       placeholder="Your Name"
                     />
@@ -179,6 +202,7 @@ const Contact: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
                     <input 
                       type="email" 
                       id="email" 
+                      name="email"
                       className={`w-full p-3 border ${theme === 'night' ? 'bg-indigo-950/30 border-purple-500/30' : theme === 'evening' ? 'bg-purple-900/30 border-purple-400/30' : theme === 'day' ? 'bg-blue-600/10 border-blue-300/30' : 'bg-orange-600/10 border-orange-300/30'} rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500/50 ${getTextColor()}`}
                       placeholder="Your Email"
                     />
@@ -191,6 +215,7 @@ const Contact: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
                   <input 
                     type="text" 
                     id="subject" 
+                    name="subject"
                     className={`w-full p-3 border ${theme === 'night' ? 'bg-indigo-950/30 border-purple-500/30' : theme === 'evening' ? 'bg-purple-900/30 border-purple-400/30' : theme === 'day' ? 'bg-blue-600/10 border-blue-300/30' : 'bg-orange-600/10 border-orange-300/30'} rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500/50 ${getTextColor()}`}
                     placeholder="Subject"
                   />
@@ -202,6 +227,7 @@ const Contact: React.FC<{ scrollPosition: number }> = ({ scrollPosition }) => {
                   <textarea 
                     id="message" 
                     rows={4}
+                    name="message"
                     className={`w-full p-3 border ${theme === 'night' ? 'bg-indigo-950/30 border-purple-500/30' : theme === 'evening' ? 'bg-purple-900/30 border-purple-400/30' : theme === 'day' ? 'bg-blue-600/10 border-blue-300/30' : 'bg-orange-600/10 border-orange-300/30'} rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500/50 ${getTextColor()}`}
                     placeholder="Your Message"
                   ></textarea>
